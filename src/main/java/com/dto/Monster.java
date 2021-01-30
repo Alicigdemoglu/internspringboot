@@ -1,5 +1,7 @@
 package com.dto;
 
+import com.repository.MonsterData;
+
 import java.util.UUID;
 
 public class Monster {
@@ -9,8 +11,11 @@ public class Monster {
     private String name;
     private String id;
 
-    public Monster() {
-
+    public Monster(MonsterData monsterData) {
+        this.id = monsterData.getId();
+        this.type = monsterData.getType();
+        this.level = monsterData.getLevel();
+        this.name = monsterData.getName();
     }
 
     public Monster(String name, String type){
