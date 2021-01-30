@@ -20,8 +20,12 @@ Swagger UI displays all exposed APIs
 ![images/SwaggerController.jpg](images/SwaggerController.jpg)
 ### Swagger-UI Testing
 We can go ahead an create an experimental monster named "Cocktail" with type "Party" thanks to the local MongoDB storing our data
-![images/SuccessfulCreate.jpg](images/SuccessfulCreate.jpg)
-In this example, using the unique id "397890eb-3ed4-4e46-8cc8-038d7696a9a7", we can level up our monster, and see the new data in the response
+![images/SuccessfulCreateInput.jpg](images/SuccessfulCreateInput.jpg)
+![images/SuccessfulCreateResponse.jpg](images/SuccessfulCreateResponse.jpg)
+Because we have input validation in place, if you send an incorrect JSON or less than 2 characters per field, you would see the following 4xx error response
+![image/FailedCreateInput.jpg](image/FailedCreateInput.jpg)
+![image/FailedCreateResponse.jpg](image/FailedCreateResponse.jpg)
+In this example, using the unique id "b6900e20-bc6f-412a-9839-89d8a281ec65", we can level up our monster, and see the new data in the response
 ![images/levelUp.jpg](images/levelUp.jpg)
 
 ## UML
@@ -40,13 +44,13 @@ Expected result
 [INFO]
 [INFO] Results:
 [INFO]
-[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  21.943 s
-[INFO] Finished at: 2021-01-30T07:19:25-05:00
+[INFO] Total time:  25.918 s
+[INFO] Finished at: 2021-01-30T09:24:01-05:00
 [INFO] ------------------------------------------------------------------------
 ```
 
