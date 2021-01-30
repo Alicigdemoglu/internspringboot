@@ -42,10 +42,14 @@ public class Monster {
     }
 
 
-
     @Override
     public String toString() {
         return "Monster [id=" + id + ", type=" + type + ", name="
                 + name + ", level=" + level +"]";
+    }
+
+    @Override
+    public final int hashCode() {
+        return this.id.hashCode();
     }
 }

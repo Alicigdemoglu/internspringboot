@@ -2,20 +2,11 @@ package com.repository;
 
 import com.dto.Monster;
 import com.querydsl.core.annotations.QueryEntity;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
-import org.springframework.data.annotation.Transient;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
-import org.springframework.data.mongodb.core.index.CompoundIndexes;
-import org.springframework.data.mongodb.core.index.IndexDirection;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Date;
-import java.util.UUID;
 
 
 @QueryEntity
@@ -36,7 +27,6 @@ public class MonsterData {
         this.level = monster.getLevel();;
         this.name = monster.getName();
         this.created = new Date().toString();
-
     }
 
     @PersistenceConstructor

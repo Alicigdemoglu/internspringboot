@@ -1,14 +1,10 @@
 package com.service;
 
 import com.dto.Monster;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-//import com.repository.MonsterRepository;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import com.repository.MonsterData;
 import com.repository.MonsterRepository;
@@ -24,7 +20,6 @@ public class MonsterService {
 
     public Monster create(Monster monster){
         monsterRepository.save(new MonsterData(monster));
-        // repository.create(monster.getId(), monster.getName(), monster.getType(), monster.getLevel());
         return monster;
     }
 
