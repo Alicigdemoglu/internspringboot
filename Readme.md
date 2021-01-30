@@ -23,8 +23,8 @@ We can go ahead an create an experimental monster named "Cocktail" with type "Pa
 ![images/SuccessfulCreateInput.jpg](images/SuccessfulCreateInput.jpg)
 ![images/SuccessfulCreateResponse.jpg](images/SuccessfulCreateResponse.jpg)
 Because we have input validation in place, if you send an incorrect JSON or less than 2 characters per field, you would see the following 4xx error response
-![image/FailedCreateInput.jpg](image/FailedCreateInput.jpg)
-![image/FailedCreateResponse.jpg](image/FailedCreateResponse.jpg)
+![images/FailedCreateInput.jpg](images/FailedCreateInput.jpg)
+![images/FailedCreateResponse.jpg](images/FailedCreateResponse.jpg)
 In this example, using the unique id "b6900e20-bc6f-412a-9839-89d8a281ec65", we can level up our monster, and see the new data in the response
 ![images/levelUp.jpg](images/levelUp.jpg)
 
