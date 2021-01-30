@@ -1,5 +1,5 @@
-package com.swagger2;
-/*
+package com.swagger;
+
 import io.swagger.annotations.Contact;
 import io.swagger.annotations.ExternalDocs;
 import io.swagger.annotations.Info;
@@ -30,4 +30,4 @@ public interface ApiDocumentationConfig {
 
 }
 
- */
+

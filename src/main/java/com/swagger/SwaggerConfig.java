@@ -1,7 +1,9 @@
-package com.swagger2;
+
+package com.swagger;
+
 
 // Adapted from https://github.com/in28minutes/spring-boot-examples/blob/master/spring-boot-2-rest-service-with-swagger/src/main/java/com/in28minutes/springboot/rest/example/swagger/SwaggerConfig.java
-/*
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,10 +15,8 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 @Configuration
-@EnableSwagger2WebMvc
 public class SwaggerConfig {
 
     public static final Contact DEFAULT_CONTACT = new Contact(
@@ -40,4 +40,4 @@ public class SwaggerConfig {
     }
 }
 
- */
+
