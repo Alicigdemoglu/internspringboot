@@ -1,15 +1,34 @@
 package com.dto;
 
 import com.repository.MonsterData;
+import io.swagger.annotations.ApiModelProperty;
+import org.springframework.beans.factory.annotation.Value;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
+@Entity
 public class Monster {
 
-    private String type;
-    private int level;
-    private String name;
+    @Id
+    @GeneratedValue
+    @ApiModelProperty(hidden=true)
     private String id;
+
+    @NotNull
+    @Size(min=2, message="Type should have at least 2 characters")
+    private String type;
+    @NotNull
+    @Size(min=2, message="Name should have at least 2 characters")
+    private String name;
+
+    @ApiModelProperty(hidden=true)
+    @Value("${level:1}")
+    private int level;
 
     public Monster(MonsterData monsterData) {
         this.id = monsterData.getId();
@@ -23,6 +42,17 @@ public class Monster {
         this.type = type;
         this.level = 1;
         this.id = UUID.randomUUID().toString();
+    }
+
+    public Monster(Monster monsterToClone){
+        this.name = monsterToClone.getName();
+        this.type = monsterToClone.getType();
+        this.level = monsterToClone.getLevel() < 1 ? 1 : monsterToClone.getLevel();
+        this.id = monsterToClone.getId() instanceof String ?  monsterToClone.getId() : UUID.randomUUID().toString();
+    }
+
+    public Monster() {
+
     }
 
     public String getId() {

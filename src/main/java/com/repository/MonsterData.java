@@ -37,6 +37,10 @@ public class MonsterData {
         this.id = id;
     }
 
+    public MonsterData() {
+
+    }
+
     public String getId() {
         return this.id;
     }
