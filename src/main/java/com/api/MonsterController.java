@@ -26,33 +26,28 @@ public class MonsterController {
         return newMonster;
     }
 
-    @GetMapping("/monster")
+    @GetMapping("/getmonster")
     public Monster getMonster(@RequestParam String id) {
-        return MonsterService.getById(id);
+        return monsterService.getById(id);
     }
 
-    @GetMapping("/monsters")
+    @GetMapping("/getallmonsters")
     public List<Monster> getMonsters() {
         return monsterService.getAll();
     }
 
     @PutMapping( "/levelup")
     public Monster levelUp(@RequestParam String id) {
-        return MonsterService.levelUp(id);
+        return monsterService.levelUp(id);
     }
 
     @PutMapping( "/changetype")
     public Monster changeType(@RequestParam String id, @RequestParam String type) {
-        return MonsterService.changeType(id, type);
+        return monsterService.changeType(id, type);
     }
 
     @DeleteMapping( "/release")
     public boolean release(@RequestParam String id) {
-        return MonsterService.release(id);
+        return monsterService.release(id);
     }
-//
-//    @RequestMapping(method = RequestMethod.GET, value = "/api/javainuse")
-//    public String sayHello() {
-//        return "Swagger Hello World";
-//    }
 }

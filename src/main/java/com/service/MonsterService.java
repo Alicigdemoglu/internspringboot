@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+
 import com.repository.MonsterData;
 import com.repository.MonsterRepository;
 
@@ -34,33 +36,44 @@ public class MonsterService {
         return allMonsters;
     }
 
-    public static Monster getById(String id) {
-        List<Monster> monsters = new ArrayList<Monster>(Arrays.asList(new Monster("a","fire")));
-        for (Monster monster : monsters) {
-            if (monster.getId().equals(id)) {
-                return monster;
-            }
+    public Monster getById(String id) {
+        MonsterData monsterData = monsterRepository.findById(id).orElse(null);
+        if(monsterData != null){
+           return new Monster(monsterData);
+        } else {
+            return null;
         }
-        return new Monster("siksok","sik");
     }
 
-    public static Monster levelUp(String id){
-
-        // repository.updateLevel(id, "level", selected.getLevel()+1)
-        Monster modifiedMon = getById(id);
-        return modifiedMon;
+    public Monster levelUp(String id){
+        MonsterData monsterData = monsterRepository.findById(id).orElse(null);
+        if(monsterData != null){
+            monsterData.setLevel(monsterData.getLevel()+1);
+            monsterRepository.save(monsterData);
+            return new Monster(monsterData);
+        } else {
+            return null;
+        }
     }
 
-    public static Monster changeType(String id, String type){
-
-        // repository.update(id, "type", type);
-        Monster modifiedMon = getById(id);
-        return modifiedMon;
+    public Monster changeType(String id, String type){
+        MonsterData monsterData = monsterRepository.findById(id).orElse(null);
+        if(monsterData != null){
+            monsterData.setType(type);
+            monsterRepository.save(monsterData);
+            return new Monster(monsterData);
+        } else {
+            return null;
+        }
     }
 
-    public static boolean release(String id){
-
-        // repository.delete(id);
-        return true;
+    public boolean release(String id){
+        MonsterData monsterData = monsterRepository.findById(id).orElse(null);
+        if(monsterData != null){
+            monsterRepository.delete(monsterData);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -28,7 +28,6 @@ public class MonsterData {
     private String type;
     private int level;
     private String name;
-
     private String created;
 
     public MonsterData(Monster monster) {
@@ -40,17 +39,12 @@ public class MonsterData {
 
     }
 
-    public MonsterData(String name, String type){
-        this.name = name;
-        this.type = type;
-        this.level = 1;
-        this.id = UUID.randomUUID().toString();
-    }
-
-    public MonsterData(String name, String type, int level){
+    @PersistenceConstructor
+    public MonsterData(final String name, final String type, final int level, final String id) {
         this.name = name;
         this.type = type;
         this.level = level;
+        this.id = id;
     }
 
     public String getId() {
@@ -67,6 +61,14 @@ public class MonsterData {
 
     public String getType() {
         return this.type;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
 }
