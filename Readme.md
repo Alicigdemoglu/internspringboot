@@ -1,7 +1,7 @@
-# Welcome to my Sennovate Intern Project: Monster Trainer!
+# Welcome to my Intern Project: Monster Trainer!
 
 ## What is this project about???
-This is an API client that allows you to create monsters, level them up, change their types, and release them into the wild world net! You can will be able to try it on your own once you clone the repo, execute the installation steps, and use the beautiful UI of Swagger UI. More importantly though, I want to join the Sennovate Family.
+This is an API client that allows you to create monsters, level them up, change their types, and release them into the wild world net! You can will be able to try it on your own once you clone the repo, execute the installation steps, and use the beautiful UI of Swagger UI.
 
 ## Installation
 Make sure you have Maven installed as per assignment description.
